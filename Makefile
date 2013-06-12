@@ -25,7 +25,7 @@ build:
 	make -C /lib/modules/$(KERNEL)/build M=$(PWD)/bridge
 
 clean:
-	$(RM) -rf $(CLEANS)
+	make -C /lib/modules/$(KERNEL)/build M=$(PWD)/bridge clean
 	$(RM) -rf rpm exports
 
 distclean: clean
