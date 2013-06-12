@@ -43,6 +43,8 @@ rm -rf $RPM_BUILD_ROOT
     : echo "`date '+%%b %%e %%H:%%M:%%S'`: New install"
 }
 
+depmod -a
+
 %changelog
 
 * Wed Jun 12 2013 Karl Redgate <Karl.Redgate@gmail.com>
