@@ -190,6 +190,7 @@ struct net_bridge
 
 	unsigned char			topology_change;
 	unsigned char			topology_change_detected;
+	unsigned char			address_locked;
 
 #ifdef CONFIG_BRIDGE_IGMP_SNOOPING
 	unsigned char			multicast_router;

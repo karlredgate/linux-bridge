@@ -219,6 +219,12 @@ void br_stp_recalculate_bridge_id(struct net_bridge *br)
 	if (br->flags & BR_SET_MAC_ADDR)
 		return;
 
+	if (br->address_locked) {
+		printk(KERN_INFO "%s: address locked, refusing to change MAC\n",
+			br->dev->name );
+		return;
+	}
+
 	list_for_each_entry(p, &br->port_list, list) {
 		if (addr == br_mac_zero ||
 		    memcmp(p->dev->dev_addr, addr, ETH_ALEN) < 0)
