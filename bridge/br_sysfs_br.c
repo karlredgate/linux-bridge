@@ -189,9 +189,10 @@ static ssize_t show_address_locked(struct device *d,
 	return sprintf(buf, "%d\n", br->address_locked);
 }
 
-static void set_address_locked(struct net_bridge *br, unsigned long val)
+static int set_address_locked(struct net_bridge *br, unsigned long val)
 {
 	br->address_locked = val;
+	return 0;
 }
 
 static ssize_t store_address_locked(struct device *d,
