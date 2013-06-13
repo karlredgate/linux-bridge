@@ -14,7 +14,7 @@ default: rpm
 rpm: dist
 	rm -rf rpm
 	mkdir -p rpm/BUILD rpm/RPMS rpm/BUILDROOT
-	rpmbuild -bb --buildroot=$(PWD)/rpm/BUILDROOT bridge.spec
+	rpmbuild --quiet -bb --buildroot=$(PWD)/rpm/BUILDROOT bridge.spec
 
 dist: build
 	$(RM) -rf exports
