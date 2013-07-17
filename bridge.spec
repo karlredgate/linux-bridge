@@ -18,6 +18,8 @@ Requires: kernel
 BuildRoot: %{_topdir}/BUILDROOT
 %define Exports %(echo $PWD)/exports
 
+Requires(post): module-init-tools
+
 %description
 Modified Linux bridge to allow address locking.
 
