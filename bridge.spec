@@ -2,13 +2,13 @@
 %define treeish %(git rev-parse --short HEAD)
 %define localmods %(git diff-files --exit-code --quiet  || date +.m%%j%%H%%M%%S)
 
-Summary: Unity Kernel Bridge
-Name: unity-bridge
+Summary: Kernel Bridge
+Name: redgate-bridge
 Version: 7.0
 Release: %{revcount}.%{treeish}%{localmods}
 Distribution: CentOS
 Group: System Environment/Kernel
-License: Proprietary
+License: GPL
 Vendor: Karl Redgate
 Packager: Karl N. Redgate <Karl.Redgate@gmail.com>
 Requires: kernel
